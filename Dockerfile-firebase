@@ -1,0 +1,5 @@
+FROM cosminstefanxp/hugo-node:0.68.3
+
+# Install Firebase
+RUN npm install -g firebase-tools
+
