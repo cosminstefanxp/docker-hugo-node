@@ -1,6 +1,6 @@
-FROM node:13-alpine
+FROM node:14-alpine
 
-ENV HUGO_VERSION=0.68.3
+ENV HUGO_VERSION=0.74.3
 ENV HUGO_BINARY hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
 
 # Install glibc (required for Extended version of Hugo) & temporary tools

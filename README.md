@@ -3,41 +3,41 @@ Light docker container, designed for CI, for building [Hugo](https://gohugo.io) 
 Optionally comes with [Firebase CLI](https://firebase.google.com/docs/cli) installed.
 
 ## Tools
-The image is based on [node:13-alpine](https://hub.docker.com/_/node) and the following tools and versions are available 
+The image is based on [node:14-alpine](https://hub.docker.com/_/node) and the following tools and versions are available 
 in the image, with Firebase being available only in the `-firebase` variant.
 
 | Tool      | Version   | 
 | ---       | ---       |
-| Node      | 13.11.0   |
-| Hugo      | 0.68.3    |
-| Firebase  | 7.16.1    |
+| Node      | 14.10.1   |
+| Hugo      | 0.74.3    |
+| Firebase  | 8.10.0    |
 
 ## Usage
 The entrypoint is `node` (as defined in the official `node` images), but `sh` or `hugo` can easily be used directly.
 
 To run a shell inside the container:
 ```shell script
-docker run -it --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.68.3 sh
+docker run -it --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.74.3 sh
 ```
 
 To run the Node shell inside the container:
 ```shell script
-docker run -it --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.68.3 node
+docker run -it --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.74.3 node
 ```
 
 To run a NPM command inside the container:
 ```shell script
-docker run --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.68.3 npm version
+docker run --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.74.3 npm version
 ```
 
 To run a Hugo build inside the container:
 ```shell script
-docker run --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.68.3 hugo -s /src
+docker run --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.74.3 hugo -s /src
 ```
 
 To run a Firebase CLI command inside the container:
 ```shell script
-docker run --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.68.3-firebase firebase --version
+docker run --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.74.3-firebase firebase --version
 ```
 
 ## Terms
