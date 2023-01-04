@@ -10,9 +10,9 @@ in the image, with Firebase being available only in the `-firebase` variant.
 
 | Tool     | Version | 
 |----------|---------|
-| Node     | 14.19.1 |
-| Hugo     | 0.96.0  |
-| Firebase | 10.6.0  |
+| Node     | 14.21.2 |
+| Hugo     | 0.109.0 |
+| Firebase | 11.19.0 |
 
 ## Usage
 
@@ -21,32 +21,32 @@ The entrypoint is `node` (as defined in the official `node` images), but `sh` or
 To run a shell inside the container:
 
 ```shell script
-docker run -it --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.96.0 sh
-docker run -it --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.96.0-firebase sh
+docker run -it --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.109.0 sh
+docker run -it --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.109.0-firebase sh
 ```
 
 To run the Node shell inside the container:
 
 ```shell script
-docker run -it --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.96.0 node
+docker run -it --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.109.0 node
 ```
 
 To run a NPM command inside the container:
 
 ```shell script
-docker run --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.96.0 npm version
+docker run --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.109.0 npm version
 ```
 
 To run a Hugo build inside the container:
 
 ```shell script
-docker run --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.96.0 hugo -s /src
+docker run --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.109.0 hugo -s /src
 ```
 
 To run a Firebase CLI command inside the container:
 
 ```shell script
-docker run --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.96.0-firebase firebase --version
+docker run --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.109.0-firebase firebase --version
 ```
 
 ## Terms
@@ -72,13 +72,13 @@ docker build --squash -t cosminstefanxp/hugo-node-firebase -f Dockerfile-firebas
 To tag the images:
 
 ```shell script
-docker tag cosminstefanxp/hugo-node cosminstefanxp/hugo-node:0.96.0
-docker tag cosminstefanxp/hugo-node-firebase cosminstefanxp/hugo-node:0.96.0-firebase
+docker tag cosminstefanxp/hugo-node cosminstefanxp/hugo-node:0.109.0
+docker tag cosminstefanxp/hugo-node-firebase cosminstefanxp/hugo-node:0.109.0-firebase
 ```
 
 To push the images:
 
 ```shell script
-docker push cosminstefanxp/hugo-node:0.96.0
-docker push cosminstefanxp/hugo-node:0.96.0-firebase
+docker push cosminstefanxp/hugo-node:0.109.0
+docker push cosminstefanxp/hugo-node:0.109.0-firebase
 ```
