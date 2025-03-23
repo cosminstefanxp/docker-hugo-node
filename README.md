@@ -5,14 +5,14 @@ Optionally comes with [Firebase CLI](https://firebase.google.com/docs/cli) insta
 
 ## Tools
 
-The image is based on [node:14-alpine](https://hub.docker.com/_/node) and the following tools and versions are available
+The image is based on [node:22-alpine](https://hub.docker.com/_/node) and the following tools and versions are available
 in the image, with Firebase being available only in the `-firebase` variant.
 
 | Tool     | Version | 
 |----------|---------|
-| Node     | 14.21.2 |
-| Hugo     | 0.109.0 |
-| Firebase | 11.19.0 |
+| Node     | 22.14.0 |
+| Hugo     | 0.143.0 |
+| Firebase | 13.35.1 |
 
 ## Usage
 
@@ -21,32 +21,32 @@ The entrypoint is `node` (as defined in the official `node` images), but `sh` or
 To run a shell inside the container:
 
 ```shell script
-docker run -it --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.109.0 sh
-docker run -it --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.109.0-firebase sh
+docker run -it --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.143.0 sh
+docker run -it --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.143.0-firebase sh
 ```
 
 To run the Node shell inside the container:
 
 ```shell script
-docker run -it --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.109.0 node
+docker run -it --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.143.0 node
 ```
 
 To run a NPM command inside the container:
 
 ```shell script
-docker run --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.109.0 npm version
+docker run --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.143.0 npm version
 ```
 
-To run a Hugo build inside the container:
+To run a Hugo command inside the container:
 
 ```shell script
-docker run --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.109.0 hugo -s /src
+docker run --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.143.0 hugo version
 ```
 
 To run a Firebase CLI command inside the container:
 
 ```shell script
-docker run --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.109.0-firebase firebase --version
+docker run --rm -v $(pwd):/src cosminstefanxp/hugo-node:0.143.0-firebase firebase --version
 ```
 
 ## Terms
@@ -72,13 +72,13 @@ docker build --squash -t cosminstefanxp/hugo-node-firebase -f Dockerfile-firebas
 To tag the images:
 
 ```shell script
-docker tag cosminstefanxp/hugo-node cosminstefanxp/hugo-node:0.109.0
-docker tag cosminstefanxp/hugo-node-firebase cosminstefanxp/hugo-node:0.109.0-firebase
+docker tag cosminstefanxp/hugo-node cosminstefanxp/hugo-node:0.143.0
+docker tag cosminstefanxp/hugo-node-firebase cosminstefanxp/hugo-node:0.143.0-firebase
 ```
 
 To push the images:
 
 ```shell script
-docker push cosminstefanxp/hugo-node:0.109.0
-docker push cosminstefanxp/hugo-node:0.109.0-firebase
+docker push cosminstefanxp/hugo-node:0.143.0
+docker push cosminstefanxp/hugo-node:0.143.0-firebase
 ```
